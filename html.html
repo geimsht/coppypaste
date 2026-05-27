@@ -1,103 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
+    <head>
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jm Pogi</title>
+        <link rel="stylesheet" href="../users-ui/message-jm.css">
 
-    <title>Message Jm</title>
+    </head>
 
-    <link rel="stylesheet" href="message-jm.css">
-</head>
+    <body>
 
-<body>
+        <div class="top-bar">
 
-    <div class="chat-container">
+            <div class="card-topBar">
 
-        <!-- HEADER -->
+                <div class="avatar-wrapper">
+                <img src="../icon/pfp.jpg" alt="Profile">
+                <span class="status"></span>
 
-        <div class="chat-header">
+            </div>
 
-            <img src="../icon/pfp.jpg" alt="Profile">
+            <div class="name">Jm Pogi</div>
 
-            <div class="user-info">
-                <h3>Jm Pogi</h3>
-                <span>Online</span>
             </div>
 
         </div>
 
-        <!-- MESSAGES -->
+        <div class="mid-bar">
 
-        <div class="messages" id="messages">
+        </div>
 
-            <div class="message received">
-                Yo bro 👋
-            </div>
+        <div class="bottom-bar">
 
-            <div class="message sent">
-                Hello 😎
-            </div>
+            <div class="card-bottomBar">
 
-            <div class="message received">
-                Your UI looks clean
+                <textarea class="input-message" placeholder="Mesage"></textarea>
+
+                <button class="send-btn">Send</button>
+
             </div>
 
         </div>
 
-        <!-- INPUT -->
 
-        <div class="chat-input">
-
-            <input
-                type="text"
-                id="messageInput"
-                placeholder="Type message...">
-
-            <button onclick="sendMessage()">
-                Send
-            </button>
-
-        </div>
-
-    </div>
-
-    <script>
-
-        function sendMessage() {
-
-            const input =
-            document.getElementById("messageInput");
-
-            const messages =
-            document.getElementById("messages");
-
-            if (input.value.trim() === "")
-            return;
-
-            const newMessage =
-            document.createElement("div");
-
-            newMessage.classList.add(
-                "message",
-                "sent"
-            );
-
-            newMessage.textContent =
-            input.value;
-
-            messages.appendChild(newMessage);
-
-            input.value = "";
-
-            messages.scrollTop =
-            messages.scrollHeight;
-        }
-
-    </script>
-
-</body>
+    </body>
 
 </html>
