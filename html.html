@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Message Jm</title>
+
+    <link rel="stylesheet" href="message-jm.css">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- HEADER -->
+
+        <div class="chat-header">
+
+            <img src="../icon/pfp.jpg" alt="Profile">
+
+            <div class="user-info">
+                <h3>Jm Pogi</h3>
+                <span>Online</span>
+            </div>
+
+        </div>
+
+        <!-- MESSAGES -->
+
+        <div class="messages" id="messages">
+
+            <div class="message received">
+                Yo bro 👋
+            </div>
+
+            <div class="message sent">
+                Hello 😎
+            </div>
+
+            <div class="message received">
+                Your UI looks clean
+            </div>
+
+        </div>
+
+        <!-- INPUT -->
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type message...">
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function sendMessage() {
+
+            const input =
+            document.getElementById("messageInput");
+
+            const messages =
+            document.getElementById("messages");
+
+            if (input.value.trim() === "")
+            return;
+
+            const newMessage =
+            document.createElement("div");
+
+            newMessage.classList.add(
+                "message",
+                "sent"
+            );
+
+            newMessage.textContent =
+            input.value;
+
+            messages.appendChild(newMessage);
+
+            input.value = "";
+
+            messages.scrollTop =
+            messages.scrollHeight;
+        }
+
+    </script>
+
+</body>
+
+</html>
